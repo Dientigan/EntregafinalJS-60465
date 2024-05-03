@@ -1,0 +1,68 @@
+[
+    {
+        "id": "Plato-1",
+        "titulo": "Birria",
+        "imagen": "../img/Ibirria.jpg",
+        "categoria": {
+            "nombre": "Birria",
+            "id": "especiales"
+        },
+        "precio": 40.000
+    },
+
+    {
+        "id": "Plato-2",
+        "titulo": "Pizza",
+        "imagen": "../img/pizza.jpg",
+        "categoria": {
+            "nombre": "Pizza",
+            "id": "clasicos"
+        },
+        "precio": 30.000
+    },
+
+    {
+        "id": "Plato-3",
+        "titulo": "Pasta",
+        "imagen": "../img/pasta.jpg",
+        "categoria": {
+            "nombre": "pasta",
+            "id": "especiales"
+        },
+        "precio": 40.000
+    },
+
+    {
+        "id": "Plato-4",
+        "titulo": "empanadas",
+        "imagen": "./img/empanadas.jpg",
+        "categoria": {
+            "nombre": "empanadas",
+            "id": "clasicos"
+        },
+        "precio": 14.000
+    },
+
+    {
+        "id": "Plato-5",
+        "titulo": "papas",
+        "imagen": "./img/papas.jpg",
+        "categoria": {
+            "nombre": "papas",
+            "id": "adiciones"
+        },
+        "precio": 6.000
+    },
+
+    {
+        "id": "Plato-6",
+        "titulo": "pan",
+        "imagen": "./img/pan-de-ajo.jpg",
+        "categoria": {
+            "nombre": "pan",
+            "id": "adiciones"
+        },
+        "precio": 10.000
+    }
+
+]
