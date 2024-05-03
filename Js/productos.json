@@ -63,6 +63,27 @@
             "id": "adiciones"
         },
         "precio": 10.000
-    }
+    },
 
+    {
+        "id": "Plato-7",
+        "titulo": "limonada de coco",
+        "imagen": "./img/limonadadecoco.jpg",
+        "categoria": {
+            "nombre": "bebidas",
+            "id": "bebidas"
+        },
+        "precio": "3.000"
+    },
+
+    {
+        "id": "Plato-8",
+        "titulo": "cocacola",
+        "imagen": "./img/cocacola.jpg",
+        "categoria": {
+            "nombre": "bebidas",
+            "id": "bebidas"
+        },
+        "precio": "3.000"
+    }
 ]

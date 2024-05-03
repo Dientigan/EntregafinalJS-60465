@@ -1,102 +1,11 @@
-const productos = [
-    {
-        id: "Plato-1",
-        titulo: "Birria",
-        imagen: "./img/birria.jpg",
-        categoria: {
-            nombre: "especiales",
-            id: "especiales"
-        },
-        precio: "40.000"
-    },
+let productos = [];
 
-    {
-        id: "Plato-2",
-        titulo: "Pizza",
-        imagen: "./img/pizza.jpg",
-        categoria: {
-            nombre: "clasicos",
-            id: "clasicos"
-        },
-        precio: "30.000"
-    },
-
-    {
-        id: "Plato-3",
-        titulo: "Pasta",
-        imagen: "./img/pasta.jpg",
-        categoria: {
-            nombre: "especiales",
-            id: "especiales"
-        },
-        precio: "40.000"
-    },
-
-    {
-        id: "Plato-4",
-        titulo: "empanadas",
-        imagen: "./img/empanadas.jpg",
-        categoria: {
-        nombre: "clasicos",
-            id: "clasicos"
-        },
-        precio: "14.000"
-    },
-
-    {
-        id: "Plato-5",
-        titulo: "papas",
-        imagen: "./img/papas.jpg",
-        categoria: {
-            nombre: "adiciones",
-            id: "adiciones"
-        },
-         precio: "6.000"
-    },
-
-    {
-        id: "Plato-6",
-        titulo: "pan",
-        imagen: "./img/pan-de-ajo.jpg",
-        categoria: {
-            nombre: "adiciones",
-            id: "adiciones"
-        },
-        precio: "10.000"
-    },
-
-    {
-        id: "Plato-7",
-        titulo: "palimonada de coco",
-        imagen: "./img/limonadadecoco.jpg",
-        categoria: {
-            nombre: "bebidas",
-            id: "bebidas"
-        },
-        precio: "3.000"
-    },
-
-    {
-        id: "Plato-8",
-        titulo: "cocacola",
-        imagen: "./img/cocacola.jpg",
-        categoria: {
-            nombre: "bebidas",
-            id: "bebidas"
-        },
-        precio: "3.000"
-    }
-
-];
-
-/*let productos2 = [];
-
-fetch("../Js/productos.json")
-    .then(Response =>Response.json())
+fetch("./Js/productos.json")
+    .then(response => response.json())
     .then(data => {
         productos = data;
         cargarProductos(productos);
-    })*/
+    })
 
 /*funcion de creado de tarjetas*/    
 
@@ -107,7 +16,6 @@ let botonesCompra = document.querySelectorAll(".boton-compra");
 const numerito = document.querySelector("#numerito");
 
 function cargarProductos (productosElegidos) {
-
     contenedorProductos.innerHTML = "";
 
     productosElegidos.forEach(producto => {
@@ -127,8 +35,6 @@ function cargarProductos (productosElegidos) {
     })
     actualizarBotonCompra();
 }
-
-cargarProductos(productos);
 
 /*seleccion categorias y clase activa*/
 
@@ -158,10 +64,19 @@ function actualizarBotonCompra(){
     });
 }
 
-const productosEnCarrito = [];
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+if (productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    actualizarNumerito();
+} else{
+    productosEnCarrito = [];
+}
+
 
 function agregarAlCarrito(e) {
-
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
@@ -173,6 +88,8 @@ function agregarAlCarrito(e) {
         productosEnCarrito.push(productoAgregado);
     }
      actualizarNumerito();
+
+     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
 function actualizarNumerito() {
